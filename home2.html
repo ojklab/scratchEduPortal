@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>解説サイト</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1>解説サイト</h1>
+    <h2>検索</h2>
+  </header>
+  <div id="kai">
+    <div>
+      <form id="selecty">
+        <label><input type="checkbox" name="year" value="1st" v-model="yearch">1年生</label>
+        <label><input type="checkbox" name="year" value="2nd" v-model="yearch">2年生</label>
+        <label><input type="checkbox" name="year" value="3rd" v-model="yearch">3年生</label>
+        <label><input type="checkbox" name="year" value="4th" v-model="yearch">4年生</label>
+        <label><input type="checkbox" name="year" value="5th" v-model="yearch">5年生</label>
+        <label><input type="checkbox" name="year" value="6th" v-model="yearch">6年生</label>
+      </form>
+
+      <form id="selects">
+        <input type="checkbox" name="subj" value="">国語
+        <input type="checkbox" name="subj" value="">算数
+        <input type="checkbox" name="subj" value="">理科
+        <input type="checkbox" name="subj" value="">社会
+        <input type="checkbox" name="subj" value="">音楽
+      </form>
+    </div>
+
+    <div>
+      <table border="5">
+        <tr v-for="hyoji in itiran">
+<!--          <template>-->
+            <td><img :src="hyoji.image">
+              {{hyoji.title}}
+              {{hyoji.year.charAt(0)}}年生
+              {{hyoji.subject}}
+            </td>
+<!--          </template>-->
+        </tr>
+
+      </table>
+      {{yearch}}
+    </div>
+  </div>
+  <!-- ここにJavaScriptを書く -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el: '#kai',
+      data: {
+        yearch: [],
+        itiran: [{
+            image: 'img/1/run_m6.png',
+            title: '速さ',
+            year: '6th',
+            subject: '算数',
+            display: true
+          },
+          {
+            image: 'img/2/m5.png',
+            title: '正多角形',
+            year: '5th',
+            subject: '算数',
+            display: true
+          },
+          {
+            image: 'img/3/tani_m6.png',
+            title: '正三角形',
+            year: '5th',
+            subject: '算数',
+            display: false
+          }
+        ]
+      },
+      computed: {
+        fily: function() {
+          //先生のフィルター参考
+          //         return this.itiran.filter(year => year.subject === )
+
+          for (let i; i < year.length; i++) {
+            if (this.yearch[i] = this.itiran.year) {
+              
+            }
+          }
+        }
+      }
+    });
+
+  </script>
+</body>
+
+</html>
