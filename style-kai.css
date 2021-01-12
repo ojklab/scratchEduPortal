@@ -28,11 +28,17 @@ body {
 }
 
 h1 {
-   width: 1024px;
+  margin-bottom: 50px;
   padding-left: 10px;
+  padding-bottom: 10px;
 /*  background-color: #39aae6;*/
   color: #39aae6;;
-  font-size: 45px;
+  background-color: #fcf2a7;
+  font-size: 55px;
+  text-align: center;
+  border-bottom: 5px #39aae6 solid;
+  border-left: 5px #39aae6 solid;
+  
 }
 
 p {
@@ -41,80 +47,107 @@ p {
 
 /*　-----トップ-----　*/
 .top {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
+    
 }
 
-#subj{
-  background-color: 
-}
-
-
-
-#joho {
+.joho{
+  width: 400px;
+  
+  margin: 40px;
   float: right;
+  
 }
 
-#jump {
-  margin-left: 100px;
-  padding: 10px;
-  text-decoration: none;
-  color: white;
-  background-color: rgb(128, 128, 128,0.8);
+.joho img {
+  height: 80px;
+  
+}
+
+.joho p{
+  padding: 20px;
+  border: 5px dashed;
+  line-height: 30px;
+}
+
+.jikko{
+ text-align: center;
+}
+
+#scratch{
+  border: 2px gray solid;
   border-radius: 10px;
 }
 
-#jump:hover {
+#jump {
+  margin-left: 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
   background-color: rgb(128, 128, 128);
+  border-radius: 10px 10px 0px 0px;
+  position: relative;
+  left: 155px;
+  bottom: 10px;
+  
+}
+
+#jump:hover {
+  background-color: rgb(203, 203, 203);
 }
 
 
 
+/*
 h2 {
   color: #39aae6;
   font-size: 30px;
   margin-bottom: 0px;
 }
-/*　-----準備-----　*/
-.junbi{
-  border: 2px #39aae6 solid;
-  border-radius: 10px;
-}
-
-.junbi p{
-  border-left: 10px #39aae6 solid;
-  margin: 10px;
-}
+*/
 
 
 /*　-----解説-----　*/
 
-
 table {
   border: 2px #39aae6 solid;
   border-radius: 10px;
+   clear: both;
+  
 }
 
 h3{
-  border-left: 10px #39aae6 solid;
+  margin-top: 10px;
+  border-left: 30px #39aae6 solid;
  text-align: left;
   padding-left: 5px;
 }
 
-td img {
-  width: 60%;
-}
+
 
 tr td:nth-of-type(1) {
+  
   width: 500px;
   text-align: center;
-  vertical-align: top;
+ 
 }
 
 td {
   padding: 20px;
   line-height: 40px;
+   vertical-align: top;
 }
 
 td img {
   width: 80%;
+}
+
+#imgcss img{
+  width: 150px;
+  padding-left: 50px;
+ 
+}
+
+#imgcss{
+  text-align: left;
 }
