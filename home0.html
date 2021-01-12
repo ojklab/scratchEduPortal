@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>解説サイト</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1>解説サイト</h1>
+    <h2>検索</h2>
+  </header>
+  <div id="kai">
+    <div>
+      <form id="selecty">
+        <template v-for="years in category_year">
+          <input type="checkbox" name="year" value="" v-model="yearch">{{years}}
+        </template>
+      </form>
+
+      <form id="selects">
+        <template v-for="subj in category_sub">
+          <input type="checkbox" name="subj" value="">{{subj}}
+        </template>
+      </form>
+    </div>
+
+
+    <div>
+      <template v-for="hyoji in itiran">
+        <a :href="hyoji.url">
+          <div><img :src=hyoji.image>
+            {{hyoji.title}}
+            {{hyoji.year}}年生
+            {{hyoji.subject}}
+          </div>
+        </a>
+      </template>
+    </div>
+  </div>
+  <!-- ここにJavaScriptを書く -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el: '#kai',
+      data: {
+        category_sub: ['国語', '算数', '理科', '社会', '音楽'],
+        category_year: ['1年生', '2年生', '3年生', '4年生', '5年生', '6年生'],
+        yearch:[],
+        subch:[],
+        itiran: [{
+            image: 'img/1/run_m6.png',
+            title: '速さ',
+            year: '6',
+            subject: '算数',
+            url: 'https://alis.to/Onasu/articles/KJNx77bYvqXx'
+          },
+          {
+            image: 'img/2/m5.png',
+            title: '正多角形',
+            year: '5',
+            subject: '算数',
+            url: ''
+          },
+          {
+            image: 'img/3/tani_m6.png',
+            title: '単位変換',
+            year: '6',
+            subject: '算数',
+            url: ''
+          }
+        ]
+      },
+
+    });
+
+    console.log(app.yearch);
+    console.log(app.subch);
+  </script>
+</body>
+
+</html>

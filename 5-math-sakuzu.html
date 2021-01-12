@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>5年生-算数</title>
+  <link href="style-kai.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="header">
+    <a href="./home.html">検索へ戻る</a>
+  </div>
+
+  <div class="main">
+    <h1>いろんな正多角形を書こう</h1>
+    <div class="top">
+      <div class="joho">
+        <img src="img/5nensei.png" alt="5年生">
+        <img src="img/sansu.png" alt="算数">
+        <p>正多角形を扱う単元で使用できるものです。広く知られていて、代表的なものが、正多角形を作図するものなのですが、角度や長さをプログラムに直接書くものが多いので、これを、何角形にするかという指定だけすれば、猫さんが勝手に作図してくれるというものです。
+        </p>
+      </div>
+
+      <div class="jikko">
+        <a href="https://scratch.mit.edu/projects/345575965/" id="jump" target="_blank" rel="noopener noreferrer">参考プロジェクト</a><br>
+
+        <iframe src="https://scratch.mit.edu/projects/345575965/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen id="scratch">
+        </iframe>
+      </div>
+    </div>
+
+    <!--
+    <div>
+      <h2>プログラムするスプライト</h2>
+      <div class="junbi">
+        画像
+      </div>
+    </div>
+-->
+
+    <div class="kai">
+
+      <table>
+        <tr>
+          <td colspan="2" id="imgcss">
+            <h3>プログラムするスプライト</h3>
+            <img src="img/5-m-sakuzu/sprit.png" alt="プログラムするすプライト">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <h3>プログラム解説</h3>
+          </td>
+        </tr>
+        <tr>
+          <td><img src="img/5-m-sakuzu/2-2.png" alt=""></td>
+          <td>
+            <p>まず正多角形を描く準備をします。
+
+
+            </p>
+            <ol>
+              <li>[スペースキーが押されたとき]というプログラムを実行させるきっかけのブロックを置きます。</li>
+              <li>[表示する]というブロックを置きます。これは、このプログラムが、書き終わったときに、猫さんを消して完成した図形を見やすくしているのですが、次にまた書いてもらうために登場させます。猫さんを表示させないで書くこともできますが、猫さんがいないと、プログラムする時にイメージしにくいので、あったほうがいい気もします。</li>
+              <li>猫さんを真横に向かせるようにし、</li>
+              <li>正多角形を書き始める位置を指示します。３,4で書き始めの状態を作ります。</li>
+              <li>二回以上実行するときに、その前に書いた図形を消すために、書いてあるものを消します</li>
+              <li>ペンを下ろします</li>
+            </ol>
+          </td>
+        </tr>
+        <tr>
+          <td><img src="img/5-m-sakuzu/2-3.png" alt=""></td>
+          <td>
+            <p>準備ができたら、次に正多角形を書くプログラムです。まず、何角形を書きたいか数字を入力してもらうようなブロックをおき、そこに入力された数字はどこに行くかというと、このブロックの下に、[答え]と書かれた変数が用意されていて、そこに格納されます。なので、この入力された数字をプログラムで呼び出したいときに、[答え]と指定していきます。</p>
+            <p>次は、繰り返しのブロックが来ています。中を見ると、0歩動かし、計算した結果の数分回転させるを繰り返します。この緑色ところは、内角の公式を表しています。多角形の数字を入れるところに、答えの変数を使うことで、指定した数の正多角形がかけるというわけですね。このプログラムの次に[0秒まつ]とありますが、ゼロ秒だと待ててないし、無しでも動いたので、なくてもいいのかなと思います。繰り返しの回数の指定は、書きたい正多角形の角の数とおなじ辺の数が必要なので、また＜答え＞を使用しています。繰り返しですべて書き終わった後、[隠す]のブロックで猫さんを隠すことで、書き終わった図形がしっかり見えるようになります。</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body></html>
+
+<!--テンプレ
+    <tr>
+      <td><img src="img/" alt=""></td>
+<td><p></p><br></td>
+    </tr>
+
+<ol><li></li><li></li><li></li><li></li></ol>
+-->

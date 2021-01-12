@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>6年生-算数</title>
+  <link href="style-kai.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="header">
+    <a href="./home.html">検索へ戻る</a>
+  </div>
+
+  <div class="main">
+    <h1>速さのシミュレーション</h1>
+    <div class="top">
+      <div class="joho">
+        <img src="img/6nensei.png" alt="６年生">
+        <img src="img/sansu.png" alt="算数">
+        <p>「速さ」の単元で使用できるプログラムです。
+          猫さんが一斉にスタートし、ゴールまでの速さの違いを見れるようになってます。
+          よく、5分後に出発～のような問題がありますが、そういった問題に応用ができそうです。
+          これは、速さの違いを視覚的にわかるようなプログラムとなっています。
+        </p>
+      </div>
+
+      <div class="jikko">
+        <a href="https://scratch.mit.edu/projects/170801015/" id="jump" target="_blank" rel="noopener noreferrer">参考プロジェクト</a><br>
+
+        <iframe src="https://scratch.mit.edu/projects/170801015/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen id="scratch"></iframe>
+      </div>
+    </div>
+
+    <!--
+    <div>
+      <h2>プログラムするスプライト</h2>
+      <div class="junbi">
+        画像
+      </div>
+    </div>
+-->
+
+    <div class="kai">
+
+      <table>
+        <tr>
+          <td colspan="2" id="imgcss">
+            <h3>プログラムするスプライト</h3>
+            <img src="img/6-m-speed/sprit.png" alt="プログラムするすプライト">
+            <img src="img/6-m-speed/sprit2.png" alt="プログラムするすプライト">
+            <img src="img/6-m-speed/sprit3.png" alt="プログラムするすプライト">
+            <img src="img/6-m-speed/sprit4.png" alt="プログラムするすプライト">
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <h3>プログラム解説</h3>
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/6-m-speed/1-1.png" alt=""></td>
+          <td>
+            <p>まず、最初の旗のものは、プログラムを始めるきっかけになるようなものです。これがないと、プログラムが実行できません。つぎに、＜ｘ座標を-179、ｙ座標を80にする＞とありますが、これは事前準備です。いちについて～、よ～い、どん！の「いちについて～」に当たります。</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/6-m-speed/1-2.png" alt=""></td>
+          <td>
+            <p>次に、動きのプログラムになります。この[ずっと]と書かれたブロックを繰り返すことで、動いているように見せています。ざっくりとした繰り返しの流れは、</p>
+            <ol><li>コスチュームを変化させる</li><li>速さの値分すすませる</li><li>止めるタイミングを決める<br>①スプライト１に触れていなかったら→1に戻る<br>②スプライト１に触れたら→「にゃお」とないてプログラムの停止</li></ol>
+            <p>となっています。詳しく見ていきます。</p>
+            1.コスチュームを変化させる<p>［次のコスチュームにする］というのは、スプライトは、紙芝居のように何枚も用意することができるので、足を延ばした猫さんのスプライトと足を曲げた猫さんのスプライトを用意し、そのスプライトを交互に表示させることで走ってるように見えるという仕組みです。猫さんが走っているように見せるためのアニメーションの役割を果たすので、あってもなくてもいいです。</p>
+            2.速さの値分進ませる
+            <p>次の［x座標を 40/8 ずつ変える］は、40が距離、8が時間なのですが、つまり、40/8は速さを表しています。速さ分の長さを繰り返し進ませることで、40/8の速さで猫さんを走らせることができます。</p>
+            3.止めるタイミングを決める
+            <p>ずっと繰り返していたら猫さんが一生とまらないので、到着の目安を決めています。このプログラムではその目安を［スプライト１に触れた］としています。スプライト１というのは、右側にある棒です。猫さんがそこに当たったら、次にどうするかというと、［meow の音を鳴らす］［このスクリプトを止める］とあります。つまり、猫さんが「にゃお」と鳴き、プログラムが止まります。</p>
+          </td>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+</body></html>
+
+
+<!--
+<tr>
+  <td><img src="img/" alt=""></td>
+  <td>
+    <p></p><p></p><p></p>
+  </td>
+</tr>
+-->

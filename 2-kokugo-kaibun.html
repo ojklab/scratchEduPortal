@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>2年生-国語</title>
+  <link href="style-kai.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="header">
+    <a href="./home.html">検索へ戻る</a>
+  </div>
+
+  <div class="main">
+    <h1>回文を作る</h1>
+    <div class="top">
+      <div class="joho">
+        <img src="img/2nensei.png" alt="年生">
+        <img src="img/kokugo.png" alt="教科">
+        <p>回文を作るプログラムです。ほかの科目の２年生のプログラムと比べると、少し難しく感じますが、それほど量はありません。
+        </p>
+      </div>
+
+      <div class="jikko">
+        <a href="https://scratch.mit.edu/projects/382833173" id="jump" target="_blank" rel="noopener noreferrer">参考プロジェクト</a><br>
+
+        <iframe src="https://scratch.mit.edu/projects/382833173/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen id="scratch"></iframe>
+      </div>
+    </div>
+
+    <div class="kai">
+
+      <table>
+        <tr>
+          <td colspan="2" id="imgcss">
+            <h3>プログラムするスプライト</h3>
+            <img src="img/2-kokugo-kaibun/sprit.png" alt="プログラムするすプライト">
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/2-kokugo-kaibun/prog1.png" alt=""></td>
+          <td>１．準備
+            <p>緑の🏴がおされたら、
+              まずは、回文にする言葉を入力させるブロックを置き、ねこさんが入力された言葉を復唱します。</p>
+            <p>そして、のちに回文を作るための変数を初期化します。
+              以前にこの変数たちに入れられていたものを消すためです。</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/2-kokugo-kaibun/prog2.png" alt=""></td>
+          <td>２．回文を作る
+            <p>次に、入力された言葉を回文にします。</p>
+            <p>命令ブロックには並び替えというのはありません。
+              なので、並び替えるときの一連の動きを考えてみます。</p>
+            <p>回文にする手順は、左の文字から順番に、回文という変数に入れていきます。たとえば、「おにぎり」という言葉を入れるとします。</p>
+            <ol>
+              <li>”お”と回文（この時点では初期化したので空っぽ）を新たに回文に格納→回文：お</li>
+              <li>”に”と回文（お）を新たに回文に格納→回文：にお</li>
+              <li>”ぎ”と回文（にお）を新たに回文に格納→回文：ぎにお</li>
+              <li>”り”と回文（ぎにお）を新たに回文に格納→回文：りぎにお</li>
+            </ol>という流れになります。
+            <p>このscratchでは、並び替えるブロックはありませんが、ない代わりに、</p>
+            <ul>
+              <li>”変数に格納されている文字の〇番目の文字がわかる”→〇の〇番目の文字</li>
+              <li>”文字を合体させる”→〇と〇<br>※〇と〇というブロックは合計ではなくブロックをガシャンと合わせるイメージです。おに　と　ぎり　→　おにぎり</li>
+            </ul>というのを利用します。
+            <p>さらに、
+              入力された文字の、〇番目の数と回文を新たに回文に格納する
+              という作業を文字の数分繰り返しています。
+              ちなみに答えの長さというのは、文字の桁です。おにぎりだと文字四つ分、おちゃづけだと文字五つ分の長さという感じです。
+              なのでそれぞれの長さは４，５という風になります。
+              何回も回文が出てくるけどどういうこと？！となりますが、
+              正しい言い方ではないですが、変数というのは更新できます。
+              新しいものと今の変数を組み合わせた物に書き換えるという感じです。</p>
+            <p>さて、入力された文字の、〇番目の数と回文を新たに回文に格納する
+              という作業を文字の数分繰り返しをおえ、回文という変数に回文された言葉が格納されたら、最後に発言をします。</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<!--
+
+<tr>
+          <td colspan="2" id="imgcss">
+            <h3>プログラムするスプライト</h3>
+            <img src="img/★" alt="プログラムするすプライト">
+          </td>
+        </tr>
+
+
+<tr>
+  <td><img src="img/" alt=""></td>
+  <td>
+    <p></p><p></p><p></p>
+  </td>
+</tr>
+
+<ol><li></li><li></li><li></li><li></li></ol>
+-->

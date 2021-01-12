@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>2年生-国語</title>
+  <link href="style-kai.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="header">
+    <a href="./home.html">検索へ戻る</a>
+  </div>
+
+  <div class="main">
+    <h1>物語をつくる</h1>
+    <div class="top">
+      <div class="joho">
+        <img src="img/3nensei.png" alt="3年生">
+        <img src="img/kokugo.png" alt="教科">
+        <p>物語をつくるプログラムです。
+          アニメーションっぽいものになります。計算とかではなく、理想の動きをさせるために、どのような順番にしなければいけないのか、というのを考えられるのではないかと思います。
+        </p>
+      </div>
+
+      <div class="jikko">
+        <a href="https://scratch.mit.edu/projects/382835732" id="jump" target="_blank" rel="noopener noreferrer">参考プロジェクト</a><br>
+
+        <iframe src="https://scratch.mit.edu/projects/382835732/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen id="scratch"></iframe>
+      </div>
+    </div>
+
+    <div class="kai">
+
+      <table>
+        <tr>
+          <td><img src="img/3-kokugo-story/jikko.png" alt=""></td>
+          <td>
+            <p>まずストーリーの全体と、その流れをまとめます。
+              このアニメーションは野球の試合の一場面です。
+              バッターに打たれてしまうのですが、外野手がキャッチをすることでアウトになったというストーリーです。
+              流れをまとめると、</p>
+            <ol>
+              <li>ピッチャーがボールを投げる</li>
+              <li>バッターがボールを打つ</li>
+              <li>ボールが飛んでいく</li>
+              <li>外野手がボールを追いかる</li>
+              <li>外野手がボールをキャッチし、アウト！という</li>
+            </ol>これを各スプライトにプログラムしていきます。
+            <p></p>
+            <p></p>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" id="imgcss">
+            <h3>プログラムするスプライト</h3>
+            <img src="img/3-kokugo-story/sprit5.png" alt="プログラムするすプライト">
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/3-kokugo-story/pitcher.png" alt=""></td>
+          <td>
+            <p>緑の🏴が押されたら、まずpitcher-aの画像にし、
+              座標を決めます。そのあとは、スプライトを1秒の間隔をあけて変えることで、
+              動いているように見せることができます。</p>
+            <p>そして、投げ終わったタイミングで、ボールを投げるというメッセージを送ります。</p>
+            <p></p>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" id="imgcss">
+            <h3>プログラムするスプライト</h3>
+            <img src="img/3-kokugo-story/sprit4.png" alt="プログラムするすプライト">
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/3-kokugo-story/boll1.png" alt=""></td>
+          <td>
+            <p>次に、ボールです。旗が押された時点では、ボールは登場して背景ないので、サイズだけ決めて隠しておきます。</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/3-kokugo-story/boll2.png" alt=""></td>
+          <td>
+            <p>ピッチャーからボールを投げるというメッセージを受け取って初めて表示させます。</p>
+            <p>そして、表示させてすぐ、x座標を5ずつ変えるのを20回繰り返し、少しずつずらすことで、動きを見せ、バッターまで飛ばします。</p>
+            <p>ちなみに、5ずつ20回繰り返しているのは、ｘを100増やしたところが、ちょうどバットに当たる位置だからです。</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" id="imgcss">
+            <h3>プログラムするスプライト</h3>
+            <img src="img/3-kokugo-story/sprit3.png" alt="プログラムするすプライト">
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/3-kokugo-story/butter1.png" alt=""></td>
+          <td>
+            <p>バッターははじめからいるので、緑の🏴が押されたら表示させておきます。</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/3-kokugo-story/butter2.png" alt=""></td>
+          <td>
+            <p>ボールを投げられたタイミングで、コスチュームを変え始めます。</p>
+            <p>そして、ボールがちょうど到着したぐらいに、バットを振りかざすようなコスチュームにし、ボールとバットが当たった状態の時になったら、ボールを打つというメッセージを送り、最後に打ち上げるコスチュームにします。</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" id="imgcss">
+            <h3>プログラムするスプライト</h3>
+            <img src="img/3-kokugo-story/sprit4.png" alt="プログラムするすプライト">
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/3-kokugo-story/boll3.png" alt=""></td>
+          <td>
+            <p>ボールを打つというメッセージは、ボールのスプライトで受け取ります。ボールを打つというメッセージを受け取ったら、1秒で、適当な場所に飛ばします。</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" id="imgcss">
+            <h3>プログラムするスプライト</h3>
+            <img src="img/3-kokugo-story/sprit2.png" alt="プログラムするすプライト">
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/3-kokugo-story/outfielder1.png" alt=""></td>
+          <td>
+            <p>外野手も初めから登場させるために、実行された後、コスチュームの指定と、大きさ、位置を決めます。</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/3-kokugo-story/outfielder2.png" alt=""></td>
+          <td>
+            <p>そして、バッターが送ったボールを打つというメッセージを受け取った後、少し待って、
+              ボールに触れるまで、ボールに近づくようにします。</p>
+            <p>ちなみに、なぜこういうプログラムかというと、
+              ボールは、打たれた後、ランダムの位置に移動するので、詳しい座標が決まっていません。なので、ボールのスプライトに近づくようにプログラムします。</p><p>ボールに触れた後、コスチュームを変え、アウト！といいます。</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<!--
+
+<tr>
+          <td colspan="2" id="imgcss">
+            <h3>プログラムするスプライト</h3>
+            <img src="img/★" alt="プログラムするすプライト">
+          </td>
+        </tr>
+
+
+<tr>
+  <td><img src="img/" alt=""></td>
+  <td>
+    <p></p><p></p><p></p>
+  </td>
+</tr>
+
+<ol><li></li><li></li><li></li><li></li></ol>
+-->

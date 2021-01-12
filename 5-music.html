@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>5年生-音楽</title>
+  <link href="style-kai.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="header">
+    <a href="./home.html">検索へ戻る</a>
+  </div>
+
+  <div class="main">
+    <h1>リズムで遊ぼう</h1>
+    <div class="top">
+      <div class="joho">
+        <img src="img/5nensei.png" alt="5年生">
+        <img src="img/ongaku.png" alt="音楽">
+        <p>音符に沿って自分で音を定義するプログラムです！！！
+          そもそもは、用意された音符を使い、自分で短いリズムをつくるものなのですが、
+          このプログラムに、新しく音符のスプライトを用意し、プログラミングすることで、作るリズムの幅を広げることができます。
+        </p>
+      </div>
+
+      <div class="jikko">
+        <a href="https://scratch.mit.edu/projects/373627959" id="jump" target="_blank" rel="noopener noreferrer">参考プロジェクト</a><br>
+
+        <iframe src="https://scratch.mit.edu/projects/373627959/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen id="scratch"></iframe>
+      </div>
+    </div>
+
+    <div class="kai">
+
+      <table>
+        <tr>
+          <td colspan="2" id="imgcss">
+            <h3>プログラムするスプライト</h3>
+            <img src="img/5-music/sprit1.png" alt="プログラムするすプライト">
+            <img src="img/5-music/sprit2.png" alt="プログラムするすプライト">
+            <img src="img/5-music/sprit3.png" alt="プログラムするすプライト">
+            <img src="img/5-music/sprit4.png" alt="プログラムするすプライト">
+            <img src="img/5-music/sprit5.png" alt="プログラムするすプライト">
+            <img src="img/5-music/sprit6.png" alt="プログラムするすプライト">
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/5-music/tunageru.png" alt=""></td>
+          <td>
+            <p>新しく音符のスプライトを作成するにあたって、すでにある音符のスプライトの仕組みを理解しましょう。</p>
+            <p>まずは、並べた音符を並べた順に音を鳴らす方法です。左のプログラムは音符のスプライトすべてにプログラムされています。</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" id="imgcss">
+            <img src="img/5-music/sprit7.png" alt="プログラムするすプライト">
+          </td>
+        </tr>
+
+
+        <tr>
+          <td><img src="img/5-music/sutart.png" alt=""></td>
+          <td>
+            <p>音符を並べ終わった後に、スタートボタンを押して音楽が流れ始めるので、スタートボタンにこのようなブロックを置きます。</p>
+            <p>スタートを押すと、ミュージックスタートというメッセージを送ります。
+              これがスタートのきっかけなのですが、
+              どの矢印の色にどの音符がのっているかを判別するために、
+              自分（音符のブロック）が何色に触れているかで判別します。
+              そのため、〇色に触れたら、ドンドンと鳴らすようにします。</p>
+            <p>これで矢印と音符がつながったのですが、これを順番に鳴らすために、
+              メッセージを送るブロックをふんだんに使います。</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/5-music/tunageru.png" alt=""></td>
+          <td>
+            <p>ミュージックスタートのメッセージを受け取ったとき、
+
+              もし緑に触れいていた（緑の矢印上にいた）なら、音を鳴らして、
+              ’ムラサキ’を送る。
+              ’ムラサキ’を受け取ったとき、紫の矢印にいたら、音を鳴らして、
+              ’ピンク’を送る…のように、
+              メッセージを送ることで、順番に鳴らすようになっています。
+              次に鳴らす音をどうやって指定しているかというと、</p>
+
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/5-music/teigi.png" alt=""></td>
+          <td>
+            <p>ブロックを定義し、その中で音符のリズムを作ります。
+拍を変えたり、休むブロックを使うことで幅が広がります。</p>
+            </td>
+        </tr>
+        
+        <tr>
+          <td><img src="img/5-music/kuro-n.png" alt=""></td>
+          <td>
+            <p>最後に、同じ小節を何度も使えるようにするために、
+一回クリックをする（スプライトを押す）と、クローンを作成します。</p>
+            <p>クローンを並べて同じ小節を繰り返し使えるようになります。</p>
+            </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<!--
+
+<tr>
+          <td colspan="2" id="imgcss">
+            <h3>プログラムするスプライト</h3>
+            <img src="img/★" alt="プログラムするすプライト">
+          </td>
+        </tr>
+
+
+<tr>
+  <td><img src="img/" alt=""></td>
+  <td>
+    <p></p><p></p><p></p>
+  </td>
+</tr>
+
+<ol><li></li><li></li><li></li><li></li></ol>
+-->

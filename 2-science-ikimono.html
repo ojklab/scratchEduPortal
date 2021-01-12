@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>★年生-★</title>
+  <link href="style-kai.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="header">
+    <a href="./home.html">検索へ戻る</a>
+  </div>
+
+  <div class="main">
+    <h1>成長過程をアニメーションにしよう</h1>
+    <div class="top">
+      <div class="joho">
+        <img src="img/2nensei.png" alt="2年生">
+        <img src="img/rika.png" alt="理科">
+        <p>虫だけでなく植物やカエルなど、いろいろな植物の成長過程を
+          アニメーションにすることができるので、単元のまとめとして利用するのも良さそうです。
+          また、生物の成長過程を記録した絵などを、
+          スプライトとして使用することも可能です。
+        </p>
+      </div>
+
+      <div class="jikko">
+        <a href="https://scratch.mit.edu/projects/376447315" id="jump" target="_blank" rel="noopener noreferrer">参考プロジェクト</a><br>
+
+        <iframe src="https://scratch.mit.edu/projects/376447315/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen id="scratch"></iframe>
+      </div>
+    </div>
+
+    <div class="kai">
+
+      <table>
+        <tr>
+          <td><img src="img/2-science-ikimono/jikko.png" alt=""></td>
+          <td>
+            <p>チョウの成長過程、<br>
+
+              タマゴ→幼虫→さなぎ→成虫<br>
+
+              という流れをアニメーションにしています。</p>
+            <p>背景の葉っぱは、🏴が押されたら最背面へ移動するようにプログラムされています。
+              この葉っぱは特に動かしたりすることがないので、背景として設定してしまうのもありだと思います。</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" id="imgcss">
+            <h3>プログラムするスプライト</h3>
+            <img src="img/2-science-ikimono/sprit2.png" alt="プログラムするすプライト">
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/2-science-ikimono/tamago.png" alt=""></td>
+          <td>
+            <p>まず、実行が押されたら、表示し、位置を決めます。一秒表示した後、孵化というメッセージを送り、青虫を登場させるタイミングを設定します。</p>
+            <p>送った後に隠したタイミングで、青虫が現れます。</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" id="imgcss">
+            <h3>プログラムするスプライト</h3>
+            <img src="img/2-science-ikimono/sprit.png" alt="プログラムするすプライト">
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/2-science-ikimono/aomusi1.png" alt=""></td>
+          <td>
+            <p>まず旗が押されたときのプログラムです。
+              最初は卵だけ表示したいので隠します。</p>
+            <p>そのあと、青虫のサイズを決め、向きや位置（座標）などを決めるのですが、
+              その中に、回転方法を左右のみにする、と書かれたブロックがあります。
+              スプリライトは角度が0未満、つまりマイナスになると逆さになってしまうのですが、
+              このブロックを使うと、逆さになってしまうのではなく、反転されます。
+              なので右左を向けるようになりました。</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/2-science-ikimono/aomusi2.png" alt=""></td>
+          <td>
+            <p>タマゴから送られてきた孵化というメッセージを受け取ってから青虫を表示させます。</p>
+            <p>そして、一秒待ち、5秒で葉っぱの端まで移動し、
+              折り返して（180度回す）、またさらに、少し進んだあと、
+              蛹化というメッセージを送ります。</p>
+            <p>送ったタイミング蛹は表示されるので、このスプライトを隠します。</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/2-science-ikimono/aomusi3.png" alt=""></td>
+          <td>
+            <p>これは、青虫が移動してるときに歩いているように見せ、大きさを変えることで少しずつ成長させているプログラムです。</p>
+            <p>そして、一秒待ち、5秒で葉っぱの端まで移動し、
+              折り返して（180度回す）、またさらに、少し進んだあと、
+              蛹化というメッセージを送ります。</p>
+            <p>0.5秒待ち、150になるまで大きさを10ずつ変え、次のコスチュームに変えるというのを繰り返しています。</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" id="imgcss">
+            <h3>プログラムするスプライト</h3>
+            <img src="img/2-science-ikimono/sprit3.png" alt="プログラムするすプライト">
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/2-science-ikimono/sanagi.png" alt=""></td>
+          <td>
+            <p>これも、最初は卵だけ表示したいので隠すのと、
+              表示される瞬間度の座標で、どのコスチュームかを先に設定しておきます。</p>
+          </td>
+        </tr>
+        
+        <tr>
+          <td><img src="img/2-science-ikimono/sanagi2.png" alt=""></td>
+          <td>
+            <p>蛹のアニメーションです。</p>
+            <p>蛹は動かないので、5秒そのままにして、開くコスチュームと閉じているコスチュームを交互に表示させ、最後に蛹が開いたコスチュームにし、羽化というメッセージを送ります。(このプログラムは、繰り返しをつかってもよさそうです)</p>
+          </td>
+        </tr>
+        
+        <tr>
+          <td colspan="2" id="imgcss">
+            <h3>プログラムするスプライト</h3>
+            <img src="img/2-science-ikimono/sprit4.png" alt="プログラムするすプライト">
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/2-science-ikimono/chou.png" alt=""></td>
+          <td>
+            <p>今までのスプライトと同じように旗を押されたときは登場する時の場所だけ指定し、隠しておきます。</p>
+            <p>蛹が開き、羽化のメッセージを受け取った後表示させ、
+3秒かけてランダムの位置に移動するのを繰り返すことで、飛んでいるようにしています。(羽をパタパタさせるようなプログラムを加えてもよさそうです。)</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<!--
+
+<tr>
+          <td colspan="2" id="imgcss">
+            <h3>プログラムするスプライト</h3>
+            <img src="img/★" alt="プログラムするすプライト">
+          </td>
+        </tr>
+
+
+<tr>
+  <td><img src="img/" alt=""></td>
+  <td>
+    <p></p><p></p><p></p>
+  </td>
+</tr>
+
+<ol><li></li><li></li><li></li><li></li></ol>
+-->

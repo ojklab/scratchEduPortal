@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>5年生-理科</title>
+  <link href="style-kai.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="header">
+    <a href="./home.html">検索へ戻る</a>
+  </div>
+
+  <div class="main">
+    <h1>雨の仕組み</h1>
+    <div class="top">
+      <div class="joho">
+        <img src="img/4nensei.png" alt="4年生">
+        <img src="img/rika.png" alt="理科">
+        <p>雨が降るまでの流れをscratchで表現するものです！
+          雨の仕組みを学ぶと同時に、復習として利用できるのではないかと思います！
+        </p>
+      </div>
+
+      <div class="jikko">
+        <a href="https://scratch.mit.edu/projects/386709001" id="jump" target="_blank" rel="noopener noreferrer">参考プロジェクト</a><br>
+
+        <iframe src="https://scratch.mit.edu/projects/386709001/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen id="scratch"></iframe>
+      </div>
+    </div>
+
+    <!--
+    <div>
+      <h2>プログラムするスプライト</h2>
+      <div class="junbi">
+        画像
+      </div>
+    </div>
+-->
+
+    <div class="kai">
+
+      <table>
+        <tr>
+          <td colspan="2" id="imgcss">
+            <h3>プログラムするスプライト</h3>
+            <img src="img/5-science-r/sprit1.png" alt="プログラムするすプライト">
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/5-science-r/sun.png" alt=""></td>
+          <td>
+            <p>このアニメーションの動きは、雲を大きくする→雨を降らせる→雲が小さくなるを繰り返しています。
+              なので、まずは、雲が大きくなるまでの流れです。</p>
+            <p>最初に、太陽のスプライトの中のブロックからスタートします。旗が押されたらすぐに位置を決め、蒸発するというメッセージを送るようにします。</p>
+            <p>この蒸発するというメッセ―ジは水と雲の二つのスプライトで受け取っています。</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" id="imgcss">
+            <h3>プログラムするスプライト</h3>
+            <img src="img/5-science-r/sprit2.png" alt="プログラムするすプライト">
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/5-science-r/water1.png" alt=""></td>
+          <td>
+            <p>まず、水のスプライトを見ていきます。自分のクローンを五つ作った後、１秒待機し、雲が大きくなるというメッセージを送ります。
+              これを３回繰り返したら、雲が一番大きいものになっているので、雨が降るというメッセージを送って待ちます。</p>
+        </tr>
+
+        <tr>
+          <td><img src="img/5-science-r/water2.png" alt=""></td>
+          <td>
+            <p>さらに、クローンされたとき、
+              下の水から雲まで、クローンを移動させます。最後に雲に触れたら消えるようにします。</p>
+        </tr>
+
+        <tr>
+          <td colspan="2" id="imgcss">
+            <h3>プログラムするスプライト</h3>
+            <img src="img/5-science-r/sprit.png" alt="プログラムするすプライト">
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/5-science-r/cloud.png" alt=""></td>
+          <td>
+            <p>次に、雲のプログラムです。</p>
+            <p>蒸発するというメッセージを受け取ったらコスチュームと位置をきめ、
+              同様に、雲が大きくなるというメッセージを受け取ったら、コスチュームを大きい雲に変えます。三回このメッセージは送られてくるので、三回コスチュームを変えると一番大きい雲になります。</p>
+            <p></p>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" id="imgcss">
+            <h3>プログラムするスプライト</h3>
+            <img src="img/5-science-r/sprit3.png" alt="プログラムするすプライト">
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/5-science-r/rain1.png" alt=""></td>
+          <td>
+            <p>次に雨を降らせるプログラムです。
+
+              水のプログラムの中で、雲を一番大きいものにすると、雨が降るというメッセージが送られてきます。
+              送られてきたタイミングで雨を降らせます。</p>
+            <p>まずは、雨のスプライトを表示させます。
+              そして、x座標－２００から２００の範囲でランダムにクローンを作ります。５０回繰り返すので、５０個のクローンを作ります。
+              クローンを作ったら本体は隠し、蒸発するを送ることで、元のプログラムに戻っていきます。</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td><img src="img/5-science-r/rain2.png" alt=""></td>
+          <td>
+            <p>そして、クローンが作られたときは、端、つまり、画面下のところに触れるまでクローンを-5ずつ変えることで、雨が降っているように見せます。</p>
+            <p>このプログラムは、クローンができた瞬間、そのクローンに適用されるので、
+              沢山の雨が出発するタイミングがずれて沢山降っているように見えるのです。</p>
+            <p>このように繰り返し雲ができて雨が降って、また雲ができてという繰り返しのアニメができるようになります。</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<!--
+
+<tr>
+          <td colspan="2" id="imgcss">
+            <h3>プログラムするスプライト</h3>
+            <img src="img/★" alt="プログラムするすプライト">
+          </td>
+        </tr>
+
+<tr>
+  <td><img src="img/" alt=""></td>
+  <td>
+    <p></p><p></p><p></p>
+  </td>
+</tr>
+
+<ol><li></li><li></li><li></li><li></li></ol>
+-->
