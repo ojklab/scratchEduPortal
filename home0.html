@@ -3,81 +3,173 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>解説サイト</title>
-  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
 </head>
 
 <body>
-  <header>
-    <h1>解説サイト</h1>
-    <h2>検索</h2>
-  </header>
-  <div id="kai">
-    <div>
-      <form id="selecty">
-        <template v-for="years in category_year">
-          <input type="checkbox" name="year" value="" v-model="yearch">{{years}}
-        </template>
-      </form>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Scratchプログラミング教材ポータルサイト</h1>
+      <p class="block">サイトの解説をちゃんと書く</p>
+      <div id="app">
+        <div class="block">
+          <h2 class="subtitle">絞り込み</h2>
+          <p class="block">
+            <template v-for="year in years">
+              <label class="checkbox">
+                <input type="checkbox" name="years" :value="year" v-model="selectedYears"> {{year}}年生
+              </label>&nbsp;&nbsp;
+            </template>
+          </p>
+          <p class="block">
+            <template v-for="subj in subjs">
+              <label class="checkbox">
+                <input type="checkbox" name="subjs" :value="subj" v-model="selectedSubjs"> {{subj}}
+              </label>&nbsp;&nbsp;
+            </template>
+          </p>
+        </div>
 
-      <form id="selects">
-        <template v-for="subj in category_sub">
-          <input type="checkbox" name="subj" value="">{{subj}}
-        </template>
-      </form>
-    </div>
-
-
-    <div>
-      <template v-for="hyoji in itiran">
-        <a :href="hyoji.url">
-          <div><img :src=hyoji.image>
-            {{hyoji.title}}
-            {{hyoji.year}}年生
-            {{hyoji.subject}}
+        <div class="block">
+          <h2 class="subtitle">コンテンツ</h2>
+          <label class="checkbox">
+            <input type="checkbox" v-model="descending"> 学年降順
+          </label>
+          <div class="columns is-multiline" style="margin-top: 1em">
+            <div class="box column is-one-third" v-for="subj in sortedList" :key="subj.id">
+              <img style="height: 50px" :src=subj.image><br>
+              <a :href="subj.url">
+                {{subj.year}}年生／{{subj.title}}／{{subj.subject}}
+              </a>
+            </div>
           </div>
-        </a>
-      </template>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
+
   <!-- ここにJavaScriptを書く -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script>
     let app = new Vue({
-      el: '#kai',
-      data: {
-        category_sub: ['国語', '算数', '理科', '社会', '音楽'],
-        category_year: ['1年生', '2年生', '3年生', '4年生', '5年生', '6年生'],
-        yearch:[],
-        subch:[],
-        itiran: [{
-            image: 'img/1/run_m6.png',
-            title: '速さ',
-            year: '6',
-            subject: '算数',
-            url: 'https://alis.to/Onasu/articles/KJNx77bYvqXx'
-          },
-          {
-            image: 'img/2/m5.png',
-            title: '正多角形',
-            year: '5',
-            subject: '算数',
-            url: ''
-          },
-          {
-            image: 'img/3/tani_m6.png',
-            title: '単位変換',
-            year: '6',
-            subject: '算数',
-            url: ''
+      el: '#app',
+      computed: {
+        sortedList: function () {
+          if (this.descending) {
+            this.list.sort((a, b) => b.year - a.year);
+          } else {
+            this.list.sort((a, b) => a.year - b.year);
           }
+          const years = (this.selectedYears.length) ? this.selectedYears : this.years;
+          const subjs = (this.selectedSubjs.length) ? this.selectedSubjs : this.subjs;
+          return this.list
+            .filter(item => years.includes(item.year))
+            .filter(item => subjs.includes(item.subject));
+        }
+      },
+      data: {
+        descending: false,
+        subjs: ['国語', '算数', '理科', '社会', '音楽'],
+        years: [1, 2, 3, 4, 5, 6],
+        selectedSubjs: [],
+        selectedYears: [],
+        list: [{
+          image: 'img/1/run_m6.png',
+          title: '速さ',
+          year: 6,
+          subject: '算数',
+          url: './6-math-speed.html'
+        },
+        {
+          image: 'img/2/m5.png',
+          title: '正多角形',
+          year: 5,
+          subject: '算数',
+          url: ''
+        },
+        {
+          image: 'img/3/tani_m6.png',
+          title: '単位変換',
+          year: 6,
+          subject: '算数',
+          url: ''
+        },
+        {
+          image: 'img/3/tani_m6.png',
+          title: 'テスト',
+          year: 5,
+          subject: '音楽',
+          url: ''
+        },
+        {
+          image: 'img/3/tani_m6.png',
+          title: 'テスト',
+          year: 4,
+          subject: '算数',
+          url: ''
+        },
+        {
+          image: 'img/3/tani_m6.png',
+          title: 'テスト',
+          year: 4,
+          subject: '理科',
+          url: ''
+        },
+        {
+          image: 'img/3/tani_m6.png',
+          title: 'テスト',
+          year: 3,
+          subject: '国語',
+          url: ''
+        },
+        {
+          image: 'img/3/tani_m6.png',
+          title: 'テスト',
+          year: 3,
+          subject: '社会',
+          url: ''
+        },
+        {
+          image: 'img/3/tani_m6.png',
+          title: 'テスト',
+          year: 2,
+          subject: '算数',
+          url: ''
+        },
+        {
+          image: 'img/3/tani_m6.png',
+          title: 'テスト',
+          year: 2,
+          subject: '理科',
+          url: ''
+        },
+        {
+          image: 'img/3/tani_m6.png',
+          title: 'テスト',
+          year: 1,
+          subject: '算数',
+          url: ''
+        },
+        {
+          image: 'img/3/tani_m6.png',
+          title: 'テスト',
+          year: 1,
+          subject: '国語',
+          url: ''
+        },
+        {
+          image: 'img/3/tani_m6.png',
+          title: 'テスト',
+          year: 2,
+          subject: '理科',
+          url: ''
+        },
         ]
       },
 
     });
-
-    console.log(app.yearch);
-    console.log(app.subch);
   </script>
 </body>
 
