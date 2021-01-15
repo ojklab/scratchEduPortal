@@ -12,7 +12,7 @@
   <section class="section">
     <div class="container">
       <h1 class="title">Scratchプログラミング教材ポータルサイト</h1>
-      <p class="block">サイトの解説をちゃんと書く</p>
+      <p class="block">Scratchから、授業で使えそうなプログラムを集めました。<b></b></p>
       <div id="app">
         <div class="block">
           <h2 class="subtitle">絞り込み</h2>
@@ -56,7 +56,7 @@
     let app = new Vue({
       el: '#app',
       computed: {
-        sortedList: function () {
+        sortedList: function() {
           if (this.descending) {
             this.list.sort((a, b) => b.year - a.year);
           } else {
@@ -76,100 +76,150 @@
         selectedSubjs: [],
         selectedYears: [],
         list: [{
-          image: 'img/6-m-speed/jikko.png',
-          title: '速さ',
-          year: 6,
-          subject: '算数',
-          url: './6-math-speed.html'
-        },
-        {
-          image: 'img/5-m-sakuzu/jikko.png',
-          title: '正多角形',
-          year: 5,
-          subject: '算数',
-          url: './5-math-sakuzu.html'
-        },
-        {
-          image: 'img/2-m-tani/jikko.png',
-          title: '単位変換',
-          year: 2,
-          subject: '算数',
-          url: './2-math-tani.html'
-        },
-        {
-          image: 'img/5-math-k/jikko.png',
-          title: '公倍数・約数',
-          year: 5,
-          subject: '算数',
-          url: './5-math-kobaisu.html'
-        },
-        {
-          image: 'img/4-math-b/jikko.png',
-          title: '帯分数から約分',
-          year: 4,
-          subject: '算数',
-          url: './4-math-bunsu.html'
-        },
-        {
-          image: 'img/3-math-99/jikko.png',
-          title: '九九',
-          year: 3,
-          subject: '算数',
-          url: './3-math-99.html'
-        },
-        {
-          image: 'img/2-math-y/jikko.png',
-          title: '数（かず）',
-          year: 2,
-          subject: '算数',
-          url: './2-math-yomu.html'
-        },
-        {
-          image: 'img/2-math-h/jikko.png',
-          title: '筆算',
-          year: 2,
-          subject: '算数',
-          url: './2-matn-hissan.html'
-        },
-        {
-          image: 'img/3-kokugo-kotowaza/jikko.png',
-          title: 'ことわざ',
-          year: 3,
-          subject: '国語',
-          url: './3-kokugo-kotowaza.html'
-        },
-        {
-          image: 'img/3-kokugo-story/jikko.png',
-          title: '物語',
-          year: 3,
-          subject: '国語',
-          url: './3-kokugo-story.html'
-        },
-        {
-          image: 'img/2-kokugo-kaibun/jikko.png',
-          title: '回文',
-          year: 2,
-          subject: '国語',
-          url: './2-kokugo-kaibun.html'
-        },
-        {
-          image: 'img/5-science-r/jikko.png',
-          title: '雨',
-          year: 5,
-          subject: '理科',
-          url: './5-science-rain.html'
-        },
-        {
-          image: 'img/4-science-k/jikko.png',
-          title: 'テスト',
-          year: 2,
-          subject: '理科',
-          url: ''
-        },
+            image: 'img/6-m-speed/jikko.png',
+            title: '速さ',
+            year: 6,
+            subject: '算数',
+            url: './6-math-speed.html'
+          },
+          {
+            image: 'img/5-m-sakuzu/jikko.png',
+            title: '正多角形',
+            year: 5,
+            subject: '算数',
+            url: './5-math-sakuzu.html'
+          },
+          {
+            image: 'img/2-m-tani/jikko.png',
+            title: '単位変換',
+            year: 2,
+            subject: '算数',
+            url: './2-math-tani.html'
+          },
+          {
+            image: 'img/5-math-k/jikko.png',
+            title: '公倍数・約数',
+            year: 5,
+            subject: '算数',
+            url: './5-math-kobaisu.html'
+          },
+          {
+            image: 'img/4-math-b/jikko.png',
+            title: '帯分数から約分',
+            year: 4,
+            subject: '算数',
+            url: './4-math-bunsu.html'
+          },
+          {
+            image: 'img/3-math-99/jikko.png',
+            title: '九九',
+            year: 3,
+            subject: '算数',
+            url: './3-math-99.html'
+          },
+          {
+            image: 'img/2-math-y/jikko.png',
+            title: '数（かず）',
+            year: 2,
+            subject: '算数',
+            url: './2-math-yomu.html'
+          },
+          {
+            image: 'img/2-math-h/jikko.png',
+            title: '筆算',
+            year: 2,
+            subject: '算数',
+            url: './2-matn-hissan.html'
+          },
+          {
+            image: 'img/3-kokugo-kotowaza/jikko.png',
+            title: 'ことわざ',
+            year: 3,
+            subject: '国語',
+            url: './3-kokugo-kotowaza.html'
+          },
+          {
+            image: 'img/3-kokugo-story/jikko.png',
+            title: '物語',
+            year: 3,
+            subject: '国語',
+            url: './3-kokugo-story.html'
+          },
+          {
+            image: 'img/2-kokugo-kaibun/jikko.png',
+            title: '回文',
+            year: 2,
+            subject: '国語',
+            url: './2-kokugo-kaibun.html'
+          },
+          {
+            image: 'img/5-science-r/jikko.png',
+            title: '雨',
+            year: 5,
+            subject: '理科',
+            url: './5-science-rain.html'
+          },
+          {
+            image: 'img/4-science-k/jikko.png',
+            title: '季節',
+            year: 4,
+            subject: '理科',
+            url: './4-science-kisetu.html'
+          },
+          {
+            image: 'img/2-science-ikimono/jikko.png',
+            title: '生き物',
+            year: 2,
+            subject: '理科',
+            url: './2-science-ikimono.html'
+          },
+          {
+            image: 'img/6-society-his2/jikko.png',
+            title: '歴史',
+            year: 6,
+            subject: '社会',
+            url: './6-society-his2.html'
+          },
+          {
+            image: 'img/6-society-history/jikko.png',
+            title: '歴史',
+            year: 6,
+            subject: '社会',
+            url: './6-society-history.html'
+          },
+          {
+            image: 'img/4-society-water/jikko.png',
+            title: '水の循環',
+            year: 4,
+            subject: '社会',
+            url: './4-society-water.html'
+          },
+          {
+            image: 'img/5-music/jikko.png',
+            title: '音符',
+            year: 5,
+            subject: '音楽',
+            url: './5-music.html'
+          },
+          {
+            image: 'img/2-music/jikko.png',
+            title: '２拍子のリズム',
+            year: 2,
+            subject: '音楽',
+            url: './2-music.html'
+          },
+          {
+            image: 'img/1-music/jikko.png',
+            title: 'リズムを作る',
+            year: 1,
+            subject: '音楽',
+            url: './1-music.html'
+          },
         ]
       },
 
     });
+
   </script>
 </body>
 
