@@ -39,7 +39,7 @@
           </label>
           <div class="columns is-multiline" style="margin-top: 1em">
             <div class="box column is-one-third" v-for="subj in sortedList" :key="subj.id">
-              <img style="height: 50px" :src=subj.image><br>
+              <img style="height: 200px" :src=subj.image><br>
               <a :href="subj.url">
                 {{subj.year}}年生／{{subj.title}}／{{subj.subject}}
               </a>
@@ -76,63 +76,63 @@
         selectedSubjs: [],
         selectedYears: [],
         list: [{
-          image: 'img/1/run_m6.png',
+          image: 'img/6-m-speed/jikko.png',
           title: '速さ',
           year: 6,
           subject: '算数',
           url: './6-math-speed.html'
         },
         {
-          image: 'img/2/m5.png',
+          image: 'img/5-m-sakuzu/jikko.png',
           title: '正多角形',
           year: 5,
           subject: '算数',
-          url: ''
+          url: './5-math-sakuzu.html'
         },
         {
-          image: 'img/3/tani_m6.png',
+          image: 'img/2-m-tani/jikko.png',
           title: '単位変換',
-          year: 6,
+          year: 2,
           subject: '算数',
-          url: ''
+          url: './2-math-tani.html'
         },
         {
-          image: 'img/3/tani_m6.png',
-          title: 'テスト',
+          image: 'img/5-math-k/jikko.png',
+          title: '公倍数・約数',
           year: 5,
-          subject: '音楽',
-          url: ''
+          subject: '算数',
+          url: './5-math-kobaisu.html'
         },
         {
-          image: 'img/3/tani_m6.png',
-          title: 'テスト',
+          image: 'img/4-math-b/jikko.png',
+          title: '帯分数から約分',
           year: 4,
           subject: '算数',
-          url: ''
+          url: './4-math-bunsu.html'
         },
         {
-          image: 'img/3/tani_m6.png',
-          title: 'テスト',
-          year: 4,
-          subject: '理科',
-          url: ''
-        },
-        {
-          image: 'img/3/tani_m6.png',
-          title: 'テスト',
+          image: 'img/3-math-99/jikko.png',
+          title: '九九',
           year: 3,
-          subject: '国語',
-          url: ''
+          subject: '算数',
+          url: './3-math-99.html'
         },
         {
-          image: 'img/3/tani_m6.png',
-          title: 'テスト',
-          year: 3,
-          subject: '社会',
-          url: ''
+          image: 'img/2-math-y/jikko.png',
+          title: '数（かず）',
+          year: 2,
+          subject: '算数',
+          url: './2-math-yomu.html'
         },
         {
-          image: 'img/3/tani_m6.png',
+          image: 'img/2-math-h/jikko.png',
+          title: '筆算',
+          year: 2,
+          subject: '算数',
+          url: './2-matn-hissan.html'
+        },
+        {
+          image: 'img/3-kokugo-kotowaza/jikko.png',
           title: 'テスト',
           year: 2,
           subject: '算数',
