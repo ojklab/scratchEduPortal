@@ -12,10 +12,10 @@
   <section class="section">
     <div class="container">
       <h1 class="title">Scratchプログラミング教材ポータルサイト</h1>
-      <p class="block">Scratchから、授業で使えそうなプログラムを集めました。<b></b></p>
+      <p class="block">Scratchから、授業で使えそうなプログラムを集めました。<br>学年と科目で絞り込み検索ができます。<b></b></p>
       <div id="app">
         <div class="block">
-          <h2 class="subtitle">絞り込み</h2>
+          <h2 class="subtitle" >絞り込み</h2>
           <p class="block">
             <template v-for="year in years">
               <label class="checkbox">
@@ -39,7 +39,7 @@
           </label>
           <div class="columns is-multiline" style="margin-top: 1em">
             <div class="box column is-one-third" v-for="subj in sortedList" :key="subj.id">
-              <img style="height: 200px" :src=subj.image><br>
+              <img style="height: 120px" :src=subj.image>
               <a :href="subj.url">
                 {{subj.year}}年生／{{subj.title}}／{{subj.subject}}
               </a>
@@ -119,7 +119,7 @@
           },
           {
             image: 'img/2-math-y/jikko.png',
-            title: '数（かず）',
+            title: '二桁の数字',
             year: 2,
             subject: '算数',
             url: './2-math-yomu.html'
