@@ -12,7 +12,8 @@
   <section class="section">
     <div class="container">
       <h1 class="title">Scratchプログラミング教材ポータルサイト</h1>
-      <p class="block">Scratchから、授業で使えそうなプログラムを集めました。<br>学年と科目で絞り込み検索ができます。<b></b></p>
+      <p class="block">Scratchから、授業で使えそうなプログラムを集めました。<br>学年と教科で絞り込み検索ができます。<b></b></p>
+      
       <div id="app">
         <div class="block">
           <h2 class="subtitle" >絞り込み</h2>
@@ -23,6 +24,7 @@
               </label>&nbsp;&nbsp;
             </template>
           </p>
+          
           <p class="block">
             <template v-for="subj in subjs">
               <label class="checkbox">
@@ -37,6 +39,7 @@
           <label class="checkbox">
             <input type="checkbox" v-model="descending"> 学年降順
           </label>
+          
           <div class="columns is-multiline" style="margin-top: 1em">
             <div class="box column is-one-third" v-for="subj in sortedList" :key="subj.id">
               <img style="height: 120px" :src=subj.image>
@@ -62,6 +65,7 @@
           } else {
             this.list.sort((a, b) => a.year - b.year);
           }
+          
           const years = (this.selectedYears.length) ? this.selectedYears : this.years;
           const subjs = (this.selectedSubjs.length) ? this.selectedSubjs : this.subjs;
           return this.list
