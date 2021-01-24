@@ -19,17 +19,17 @@
           <h2 class="subtitle" >絞り込み</h2>
           <p class="block">
             <template v-for="year in years">
-              <label class="checkbox">
+              <label class="checkbox" style="margin-right:2em">
                 <input type="checkbox" name="years" :value="year" v-model="selectedYears"> {{year}}年生
-              </label>&nbsp;&nbsp;
+              </label>
             </template>
           </p>
           
           <p class="block">
             <template v-for="subj in subjs">
-              <label class="checkbox">
+              <label class="checkbox" style="margin-right:2em">
                 <input type="checkbox" name="subjs" :value="subj" v-model="selectedSubjs"> {{subj}}
-              </label>&nbsp;&nbsp;
+              </label>
             </template>
           </p>
         </div>
