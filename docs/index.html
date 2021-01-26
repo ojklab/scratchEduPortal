@@ -12,11 +12,22 @@
   <section class="section">
     <div class="container">
       <h1 class="title">Scratchプログラミング教材ポータルサイト</h1>
-      <p class="block">Scratchから、授業で使えそうなプログラムを集めました。<br>学年と教科で絞り込み検索ができます。<b></b></p>
-      
+      <p class="block" style="font-weight: bold">
+        本ポータルサイトは、<a href="https://scratch.mit.edu" target="_blank"
+          rel="noopener">Scratch</a>に公開された作品（プロジェクト）の中から小学校のプログラミング教育で利用できそうな作品を集め、独自の解説を付けて紹介したものです。
+      </p>
+      <p class="block">
+        Scratchは、MITメディア・ラボのライフロング・キンダーガーテン・グループの協力により、Scratch財団が進めているプロジェクトです。<a href="https://scratch.mit.edu"
+          target="_blank" rel="noopener">https://scratch.mit.edu</a>から自由に入手できます。
+        本ポータルサイトで紹介している各作品は、Scratchの公開プロジェクトに適用される<a href="https://creativecommons.org/licenses/by-sa/2.0/deed.en"
+          target="_blank" rel="noopener">CC BY-SA
+          2.0</a>のライセンスの下で利用しており、また、本ポータルサイトの解説コンテンツも<a href="https://creativecommons.org/licenses/by-sa/2.0/deed.en"
+          target="_blank" rel="noopener">クリエイティブ・コモンズ表示—継承</a>のライセンスが適用されます。
+      </p>
+      <hr>
       <div id="app">
         <div class="block">
-          <h2 class="subtitle" >絞り込み</h2>
+          <h2 class="subtitle">絞り込み</h2>
           <p class="block">
             <template v-for="year in years">
               <label class="checkbox">
@@ -24,7 +35,7 @@
               </label>&nbsp;&nbsp;
             </template>
           </p>
-          
+
           <p class="block">
             <template v-for="subj in subjs">
               <label class="checkbox">
@@ -33,24 +44,29 @@
             </template>
           </p>
         </div>
-
+        <hr>
         <div class="block">
           <h2 class="subtitle">コンテンツ</h2>
           <label class="checkbox">
             <input type="checkbox" v-model="descending"> 学年降順
           </label>
-          
+
           <div class="columns is-multiline" style="margin-top: 1em">
-            <div class="box column is-one-third" v-for="subj in sortedList" :key="subj.id">
-              <img style="height: 120px" :src=subj.image>
-              <a :href="subj.url">
-                {{subj.year}}年生／{{subj.title}}／{{subj.subject}}
-              </a>
+            <div class="box column is-one-third" style="display:flex" v-for="subj in sortedList" :key="subj.id">
+              <div class="media">
+                <figure class="media-left image is-128x128">
+                  <img :src=subj.image>
+                </figure>
+                <p class="media-content">
+                  <a :href="subj.url">
+                    {{subj.author}}<br>
+                    {{subj.title}}<br>
+                    {{subj.year}}年生／{{subj.unit}}／{{subj.subject}}
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- ここにJavaScriptを書く -->
@@ -59,13 +75,13 @@
     let app = new Vue({
       el: '#app',
       computed: {
-        sortedList: function() {
+        sortedList: function () {
           if (this.descending) {
             this.list.sort((a, b) => b.year - a.year);
           } else {
             this.list.sort((a, b) => a.year - b.year);
           }
-          
+
           const years = (this.selectedYears.length) ? this.selectedYears : this.years;
           const subjs = (this.selectedSubjs.length) ? this.selectedSubjs : this.subjs;
           return this.list
@@ -80,145 +96,185 @@
         selectedSubjs: [],
         selectedYears: [],
         list: [{
-            image: 'img/6-m-speed/jikko.png',
-            title: '速さ',
-            year: 6,
-            subject: '算数',
-            url: './6-math-speed.html'
-          },
-          {
-            image: 'img/5-m-sakuzu/jikko.png',
-            title: '正多角形',
-            year: 5,
-            subject: '算数',
-            url: './5-math-sakuzu.html'
-          },
-          {
-            image: 'img/2-m-tani/jikko.png',
-            title: '単位変換',
-            year: 2,
-            subject: '算数',
-            url: './2-math-tani.html'
-          },
-          {
-            image: 'img/5-math-k/jikko.png',
-            title: '公倍数・約数',
-            year: 5,
-            subject: '算数',
-            url: './5-math-kobaisu.html'
-          },
-          {
-            image: 'img/4-math-b/jikko.png',
-            title: '帯分数から約分',
-            year: 4,
-            subject: '算数',
-            url: './4-math-bunsu.html'
-          },
-          {
-            image: 'img/3-math-99/jikko.png',
-            title: '九九',
-            year: 3,
-            subject: '算数',
-            url: './3-math-99.html'
-          },
-          {
-            image: 'img/2-math-y/jikko.png',
-            title: '二桁の数字',
-            year: 2,
-            subject: '算数',
-            url: './2-math-yomu.html'
-          },
-          {
-            image: 'img/2-math-h/jikko.png',
-            title: '筆算',
-            year: 2,
-            subject: '算数',
-            url: './2-matn-hissan.html'
-          },
-          {
-            image: 'img/3-kokugo-kotowaza/jikko.png',
-            title: 'ことわざ',
-            year: 3,
-            subject: '国語',
-            url: './3-kokugo-kotowaza.html'
-          },
-          {
-            image: 'img/3-kokugo-story/jikko.png',
-            title: '物語',
-            year: 3,
-            subject: '国語',
-            url: './3-kokugo-story.html'
-          },
-          {
-            image: 'img/2-kokugo-kaibun/jikko.png',
-            title: '回文',
-            year: 2,
-            subject: '国語',
-            url: './2-kokugo-kaibun.html'
-          },
-          {
-            image: 'img/5-science-r/jikko.png',
-            title: '雨',
-            year: 5,
-            subject: '理科',
-            url: './5-science-rain.html'
-          },
-          {
-            image: 'img/4-science-k/jikko.png',
-            title: '季節',
-            year: 4,
-            subject: '理科',
-            url: './4-science-kisetu.html'
-          },
-          {
-            image: 'img/2-science-ikimono/jikko.png',
-            title: '生き物',
-            year: 2,
-            subject: '理科',
-            url: './2-science-ikimono.html'
-          },
-          {
-            image: 'img/6-society-his2/jikko.png',
-            title: '歴史',
-            year: 6,
-            subject: '社会',
-            url: './6-society-his2.html'
-          },
-          {
-            image: 'img/6-society-history/jikko.png',
-            title: '歴史',
-            year: 6,
-            subject: '社会',
-            url: './6-society-history.html'
-          },
-          {
-            image: 'img/4-society-water/jikko.png',
-            title: '水の循環',
-            year: 4,
-            subject: '社会',
-            url: './4-society-water.html'
-          },
-          {
-            image: 'img/5-music/jikko.png',
-            title: '音符',
-            year: 5,
-            subject: '音楽',
-            url: './5-music.html'
-          },
-          {
-            image: 'img/2-music/jikko.png',
-            title: '２拍子のリズム',
-            year: 2,
-            subject: '音楽',
-            url: './2-music.html'
-          },
-          {
-            image: 'img/1-music/jikko.png',
-            title: 'リズムを作る',
-            year: 1,
-            subject: '音楽',
-            url: './1-music.html'
-          },
+          author: 'kids0514さん',
+          title: '音楽1年生「リズムであそびましょう」',
+          image: 'img/6-m-speed/jikko.png',
+          unit: '速さ',
+          year: 6,
+          subject: '算数',
+          url: './6-math-speed.html'
+        },
+        {
+          author: 'author',
+          title: 'title',
+          image: 'img/5-m-sakuzu/jikko.png',
+          unit: '正多角形',
+          year: 5,
+          subject: '算数',
+          url: './5-math-sakuzu.html'
+        },
+        {
+          author: 'author',
+          title: 'title',
+          image: 'img/2-m-tani/jikko.png',
+          unit: '単位変換',
+          year: 2,
+          subject: '算数',
+          url: './2-math-tani.html'
+        },
+        {
+          author: 'author',
+          title: 'title',
+          image: 'img/5-math-k/jikko.png',
+          unit: '公倍数・約数',
+          year: 5,
+          subject: '算数',
+          url: './5-math-kobaisu.html'
+        },
+        {
+          author: 'author',
+          title: 'title',
+          image: 'img/4-math-b/jikko.png',
+          unit: '帯分数から約分',
+          year: 4,
+          subject: '算数',
+          url: './4-math-bunsu.html'
+        },
+        {
+          author: 'author',
+          title: 'title',
+          image: 'img/3-math-99/jikko.png',
+          unit: '九九',
+          year: 3,
+          subject: '算数',
+          url: './3-math-99.html'
+        },
+        {
+          author: 'author',
+          title: 'title',
+          image: 'img/2-math-y/jikko.png',
+          unit: '二桁の数字',
+          year: 2,
+          subject: '算数',
+          url: './2-math-yomu.html'
+        },
+        {
+          author: 'author',
+          title: 'title',
+          image: 'img/2-math-h/jikko.png',
+          unit: '筆算',
+          year: 2,
+          subject: '算数',
+          url: './2-matn-hissan.html'
+        },
+        {
+          author: 'author',
+          title: 'title',
+          image: 'img/3-kokugo-kotowaza/jikko.png',
+          unit: 'ことわざ',
+          year: 3,
+          subject: '国語',
+          url: './3-kokugo-kotowaza.html'
+        },
+        {
+          author: 'author',
+          title: 'title',
+          image: 'img/3-kokugo-story/jikko.png',
+          unit: '物語',
+          year: 3,
+          subject: '国語',
+          url: './3-kokugo-story.html'
+        },
+        {
+          author: 'author',
+          title: 'title',
+          image: 'img/2-kokugo-kaibun/jikko.png',
+          unit: '回文',
+          year: 2,
+          subject: '国語',
+          url: './2-kokugo-kaibun.html'
+        },
+        {
+          author: 'author',
+          title: 'title',
+          image: 'img/5-science-r/jikko.png',
+          unit: '雨',
+          year: 5,
+          subject: '理科',
+          url: './5-science-rain.html'
+        },
+        {
+          author: 'author',
+          title: 'title',
+          image: 'img/4-science-k/jikko.png',
+          unit: '季節',
+          year: 4,
+          subject: '理科',
+          url: './4-science-kisetu.html'
+        },
+        {
+          author: 'author',
+          title: 'title',
+          image: 'img/2-science-ikimono/jikko.png',
+          unit: '生き物',
+          year: 2,
+          subject: '理科',
+          url: './2-science-ikimono.html'
+        },
+        {
+          author: 'author',
+          title: 'title',
+          image: 'img/6-society-his2/jikko.png',
+          unit: '歴史',
+          year: 6,
+          subject: '社会',
+          url: './6-society-his2.html'
+        },
+        {
+          author: 'author',
+          title: 'title',
+          image: 'img/6-society-history/jikko.png',
+          unit: '歴史',
+          year: 6,
+          subject: '社会',
+          url: './6-society-history.html'
+        },
+        {
+          author: 'author',
+          title: 'title',
+          image: 'img/4-society-water/jikko.png',
+          unit: '水の循環',
+          year: 4,
+          subject: '社会',
+          url: './4-society-water.html'
+        },
+        {
+          author: 'author',
+          title: 'title',
+          image: 'img/5-music/jikko.png',
+          unit: '音符',
+          year: 5,
+          subject: '音楽',
+          url: './5-music.html'
+        },
+        {
+          author: 'author',
+          title: 'title',
+          image: 'img/2-music/jikko.png',
+          unit: '２拍子のリズム',
+          year: 2,
+          subject: '音楽',
+          url: './2-music.html'
+        },
+        {
+          author: 'author',
+          title: 'title',
+          image: 'img/1-music/jikko.png',
+          unit: 'リズムを作る',
+          year: 1,
+          subject: '音楽',
+          url: './1-music.html'
+        },
         ]
       },
 
