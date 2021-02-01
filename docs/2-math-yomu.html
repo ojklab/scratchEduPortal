@@ -15,23 +15,22 @@
   <div class="main">
     <h1>数を読ませよう</h1>
     <div class="top">
+      <div class="jikko">
+        <a href="https://scratch.mit.edu/projects/304657164/" id="jump" target="_blank" rel="noopener noreferrer">紹介する作品</a><br>
+
+        <iframe src="https://scratch.mit.edu/projects/304657164/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen id="scratch"></iframe>
+        <br>
+        <small>
+          作者：naokikatoさん<br>
+          作品名：２けたのかずをよむーおうよう
+        </small>
+      </div>
+
       <div class="joho">
         <img src="img/2nensei.png" alt="2年生">
         <img src="img/sansu.png" alt="算数">
-        <p>今回は、数に触れるために、数を猫さんに読ませよう！という単元です。数を扱うのは１年生の単元ですが、いきなり１年生からやるのは厳しいかな、、、と思い、２年生の算数とさせていただきました。この参考のプログラムをそのまま使います。上のプログラムが簡単バージョン、下が応用バージョンです。
+        <p>今回は、数に触れるために、数を猫さんに読ませよう！という単元です。数を扱うのは１年生の単元ですが、いきなり１年生からやるのは厳しいかな、、、と思い、２年生の算数とさせていただきました。
         </p>
-      </div>
-
-      <div class="jikko">
-        <a href="https://scratch.mit.edu/projects/286534155/" id="jump" target="_blank" rel="noopener noreferrer">参考プロジェクト</a><br>
-
-        <iframe src="https://scratch.mit.edu/projects/286534155/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen id="scratch"></iframe>
-      </div>
-
-      <div class="jikko">
-        <a href="https://scratch.mit.edu/projects/304657164/" id="jump" target="_blank" rel="noopener noreferrer">参考プロジェクト</a><br>
-
-        <iframe src="https://scratch.mit.edu/projects/304657164/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen id="scratch"></iframe>
       </div>
     </div>
 
@@ -49,44 +48,28 @@
       <table>
         <tr>
           <td colspan="2" id="imgcss">
-            <h3>基礎のプログラム</h3>
-
+            <h3>プログラムするスプライト</h3>
+<img src="img/2-math-y/sprit.png" alt="プログラムするすプライト">
           </td>
         </tr>
 
         <tr>
           <td><img src="img/2-math-y/5pro.png" alt=""></td>
           <td>
-            <p>並べ替えるのはした三つですね。
-              数字を読むときの規則を考えます。</p>
-            <p>二桁だと、
-              十の位の数字を読む➡十という➡一の位を言う
-              完成です！
-              二桁の数字を言い切るまでの数字の読み方を分解し、
-              適切な並べ方を身に着けられるのではないかと思います。
-            </p>
-            <p>ちなみに、10~19の時に、「いち・じゅう～」といわれたり、一の位が0のとき「れい」と読まれるのは、おかしくないです。
-              まずは読み方を分解できるようにするのがこのプログラムの目的だと思われます。次の応用で、もっとナチュラルに読めるようにしていきます。
-
+            <p>すでに組み立てられているプログラムから見てみましょう。</p>
+            <p>まず、読み上げる数字を入力させます。次に入れた数を準備するというブロックが来ていますが、これはこの読み上げのために必要なブロックなのでそっとしておいてください。理解する必要のないものです。次に、数字を読み上げるブロックが続きます。十の位の数字を言って、「じゅう」といい、最後に一の位を読み上げます。</p>
+            
+            <p>試しに実行してみてください。読み上げはするのですが、10~19のときに、「いち・じゅう～」といわれたり、一の位が0のとき「れい」と読まれるからです。でもこれはおかしくないのです。このすでに組み立てられているのは、入力された数字を“とりあえず”よみあげます。
+              下にあるブロックを組み立てることで、もっとナチュラルに読めるようにしていきます。
               そのために、今回どこが変なのかをよく観察して、
-
               どういう数字だと変な呼び方なのかをわかっておきます。</p>
           </td>
         </tr>
-
-        <tr>
-          <td colspan="2" id="imgcss">
-            <h3>応用のプログラム</h3>
-
-          </td>
-        </tr>
-
         <tr>
           <td><img src="img/2-math-y/5pro2.png" alt=""></td>
           <td>
-            <p>左側は先ほど基礎で作ったものです。
-              そこに、下のブロックを追加することで、よりナチュラルに数字を読み上げます。
-              右側の完成したプログラムと見比べると、ピンクのブロックの並び自体は変わっていません。
+            <p>
+              左が下のブロックを使って組み立てたプログラムです。最初のプログラムと比べると、ピンクのブロックの並び自体は変わっていません。
               重要なのは、条件で読むか読まないかを分けることです。</p>
             <p>
               先ほどうまく読めなかった原因は下の通りです。</p>
@@ -107,7 +90,9 @@
       </table>
     </div>
   </div>
-</body></html>
+</body>
+
+</html>
 
 <!--
 

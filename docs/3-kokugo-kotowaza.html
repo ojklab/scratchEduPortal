@@ -15,20 +15,25 @@
   <div class="main">
     <h1>ことわざアニメ</h1>
     <div class="top">
+      <div class="jikko">
+        <a href="https://scratch.mit.edu/projects/288588690" id="jump" target="_blank" rel="noopener noreferrer">紹介する作品</a><br>
+
+        <iframe src="https://scratch.mit.edu/projects/288588690/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen id="scratch"></iframe>
+        <br>
+        <small>
+          作者：beatnixさん<br>
+          作品名：ことわざ（ねこにこばん）ver.1.0.0
+        </small>
+      </div>
+
       <div class="joho">
         <img src="img/3nensei.png" alt="3年生">
         <img src="img/kokugo.png" alt="国語">
         <p>ことわざを短いアニメーションにします。かなり自由度が高いプログラムです。プログラミングを通して、正しく意味を理解するのを助けられるかな～と思います。
         </p>
       </div>
-
-      <div class="jikko">
-        <a href="https://scratch.mit.edu/projects/288588690" id="jump" target="_blank" rel="noopener noreferrer">参考プロジェクト</a><br>
-
-        <iframe src="https://scratch.mit.edu/projects/288588690/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen id="scratch"></iframe>
-      </div>
     </div>
-    
+
     <div class="kai">
 
       <table>
@@ -44,10 +49,11 @@
           <td>
             <p>最初に、小判のアニメーションです。この小判は大量のクローンをランダムな位置、ランダムな向きにし、上から下に移動させています。</p>
             <p>ほかのスプライトを隠すように小判を降らせたいので、開始と同時に最前面へ移動し、最初から小判が見えないように隠します。</p>
-            <p>次に、y座標（高さ）は同じに、x座標は実行画面の横の幅の範囲でランダム、かつ角度もランダムにしたクローンを作るプログラムを１００回繰り返します。こうすることで、クローンが大量にできます。</p><p>クローンがすべて作られ、小判がすべて落ちるまでが、この繰り返しの中で行われています。すべてが終わってから一秒おき、「おしまい」というメッセージをおくり、終了の合図をします。</p>
+            <p>次に、y座標（高さ）は同じに、x座標は実行画面の横の幅の範囲でランダム、かつ角度もランダムにしたクローンを作るプログラムを１００回繰り返します。こうすることで、クローンが大量にできます。</p>
+            <p>クローンがすべて作られ、小判がすべて落ちるまでが、この繰り返しの中で行われています。すべてが終わってから一秒おき、「おしまい」というメッセージをおくり、終了の合図をします。</p>
           </td>
         </tr>
-        
+
         <tr>
           <td><img src="img/3-kokugo-kotowaza/s5-k-koban2.png" alt=""></td>
           <td>
@@ -56,7 +62,7 @@
             <p>これで降ってきた小判が積もるアニメーションは完成です。</p>
           </td>
         </tr>
-        
+
         <tr>
           <td colspan="2" id="imgcss">
             <h3>プログラムするスプライト</h3>
@@ -74,16 +80,17 @@
             <p></p>
           </td>
         </tr>
-        
+
         <tr>
           <td><img src="img/3-kokugo-kotowaza/s5-k-onna.png" alt=""></td>
           <td>
             <p>次に、女性と男性のプログラムです。女性も男性も、似たようなプログラムなので女性を例にします。</p>
             <p>まず、スタートしたら、アニメーションをはじめからにしたいので、最初のコスチュームにします。</p>
-            <p>そして、小判が落ち終わって「おしまい」のメッセージを受け取ったら、コスチュームを喜んでいるものにし、セリフを言います。</p><p>男性のほうも同じように、実行されたあと、小判が落ち終わった後のプログラムをします。</p>
+            <p>そして、小判が落ち終わって「おしまい」のメッセージを受け取ったら、コスチュームを喜んでいるものにし、セリフを言います。</p>
+            <p>男性のほうも同じように、実行されたあと、小判が落ち終わった後のプログラムをします。</p>
           </td>
         </tr>
-        
+
         <tr>
           <td><img src="img/3-kokugo-kotowaza/" alt=""></td>
           <td>
@@ -92,7 +99,7 @@
             <p></p>
           </td>
         </tr>
-        
+
         <tr>
           <td colspan="2" id="imgcss">
             <h3>プログラムするスプライト</h3>
@@ -111,7 +118,9 @@
       </table>
     </div>
   </div>
-</body></html>
+</body>
+
+</html>
 
 <!--
 
